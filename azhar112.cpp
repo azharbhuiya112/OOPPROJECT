@@ -17,6 +17,7 @@ class bus{
 
    string bus_no,bus_name,driver_name;
    int bus_seat;
+   string *ebus_no,*dbus_name;
  public:
     void menu();
     void newbus();
@@ -28,10 +29,30 @@ class bus{
     void routbus();
     void detail_bus();
     void booking();
+    bus()
+    {
+        ebus_no=new string ;
+        dbus_name=new string;
+    }
 
 };
 
+class BusReservationSystem:public bus
+{
+public:
+    friend ostream& operator<<(ostream& cout, BusReservationSystem &b);
+};
+ostream& operator<<(ostream& cout, BusReservationSystem &b)
+{
+    cout<<"\n\n";
+    cout<<"\t\t\t\t\t<------------------------------------->\n";
+    cout<<"\t\t\t\t\t   [  BUS RESERVATION SYSTEM  ]\n";
+    cout<<"\t\t\t\t\t<------------------------------------->\n";
+    cout<<"\n";
+    cout<<"\t\t\t\t\t   Developed by : AZHAR UDDIN 2007112   ";
 
+
+}
 
 
  void bus::menu()
@@ -87,8 +108,6 @@ class bus{
 
 
  }
-
-
 
 
 
@@ -648,7 +667,7 @@ void bus:: booking()
             total_amount=s_amount*i;
             cout<<"\n\n Total amount:"<<total_amount;
 
-            cout<<"\n\n Receive amount:"<<receive_amount;
+            cout<<"\n\n Receive amount:";
             cin>>receive_amount;
 
             file.open("customer.txt",ios::app|ios::in);
@@ -694,6 +713,19 @@ void bus:: booking()
 
 }
 
+class Azhar:public bus{
+
+
+
+public:
+void welcome_msg(){
+cout << "Welcome to our Admin Panel" << endl;
+
+}
+
+
+};
+
 
 
 
@@ -703,19 +735,18 @@ void bus:: booking()
 int main()
 {
 
+     Azhar wel;
+     wel.welcome_msg();
+
        bus b;
 
    p:
-       system("cls");
+       //system("cls");
        string email,pass;
        char ch;
 
-    cout<<"\n\n";
-    cout<<"\t\t\t\t\t<------------------------------------->\n";
-    cout<<"\t\t\t\t\t   {  BUS RESERVATION SYSTEM   }\n";
-    cout<<"\t\t\t\t\t<------------------------------------->\n";
-    cout<<"\n";
-    cout<<"\t\t\t\t\t   Developed by : AZHAR UDDIN 2007112   ";
+    BusReservationSystem a;
+    cout<<a;
 
     cout<<"\n\n";
     cout<<"\nENTER YOUR EMAIL:"<<endl;
@@ -745,6 +776,7 @@ int main()
        getch();
        goto p;
    }
+
     return 0;
 }
 
