@@ -29,12 +29,26 @@ Which routs are availabe for journey user can also get this information through 
 ## OOP features used for implementation:
 
 1.Class
+
 2.Abstraction
+
 3.Encapsulation
+
 4.Inheritance
+
 5.Polymorphism
-6. Nested function
-7.Many more..
+
+6.Nested function
+
+7.Error handling
+
+8.operator overloading
+
+9.Friend Function
+
+10.Constructor
+
+11.Many more..
 
 ## How to operate:
 1. LOG in with Gmail and Password:
